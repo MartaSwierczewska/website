@@ -21,8 +21,11 @@ public class UserController {
     }
 
     @PostMapping("/deleteUser/{id}")
-    public void deleteUser(@PathVariable("id") Long id) { userService.deleteUser(id); }
-
+    public String deleteUser(@PathVariable("id") Long id,  Model model) {
+        userService.deleteUser(id);
+        model.addAttribute("users", userService.getUsers());
+        return "users";
+    }
 
     @GetMapping("/createUser")
     public String createUser(Model model) { return "createUser"; }

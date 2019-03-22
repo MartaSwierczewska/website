@@ -23,7 +23,7 @@
         <td><span th:text="${user.surname}"> Surname </span></td>
         <td><span th:text="${user.age}"> Age </span></td>
         <form>
-            <td><button th:formaction="/deleteUser/${user.id}" formmethod="post">Usuń</button></td>
+            <td><button th:formaction="${'/deleteUser/' + user.id}" formmethod="post">Usuń</button></td>
         </form>
     </tr>
     </tbody>
