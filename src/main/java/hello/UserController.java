@@ -12,9 +12,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/users")
+    @GetMapping("/usersURL")
     public String showUsers(Model model) {
-        model.addAttribute("users", userService.getUsers());
+        model.addAttribute("usersLIST", userService.getUsers());
         return "users";
     }
 
