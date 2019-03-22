@@ -2,22 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; UTF-8">
+    <link rel="stylesheet" type="text/css" th:href=@{createUser.css}>
     <title>Dodawanie</title>
 </head>
 <body>
 <form action="/createUser" method="post">
-    First name:<br>
+    <p>First name:</p>
     <input type="text" name="name"><br>
-    Last name:<br>
+    <p>Last name:</p>
     <input type="text" name="surname"><br>
-    Age:<br>
+    <p>Age:</p>
     <input type="text" name="age"><br>
 <br>
-<button formmethod="post">Zapisz</button>
+    <button formmethod="post">Zapisz</button>
+    <button formaction="/users" formmethod="get">Powrót</button>
 </form>
-<form>
-    <button formaction="/" formmethod="get">Powrót</button>
-</form>
-
 </body>
 </html>

@@ -1,0 +1,10 @@
+input[type=text] {
+  width: 30%;
+  padding: 7px 10px;
+  box-sizing: border-box;
+  border-radius:5px;
+}
+
+p{
+    font-size:15px;
+}
