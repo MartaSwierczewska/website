@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <link rel="stylesheet" type="text/css" th:href=@{users.css}>
+    <link href="../static/css/users.css" th:href="@{/css/users.css}" rel="stylesheet" >
     <title>Użytkownicy</title>
 </head>
 <body>
@@ -22,7 +22,9 @@
         <td><span th:text="${user.name}"> Name </span></td>
         <td><span th:text="${user.surname}"> Surname </span></td>
         <td><span th:text="${user.age}"> Age </span></td>
-        <td><button formaction="/deleteUser/${user.id}" formmethod="post">Usuń</button></td>
+        <form>
+            <td><button formaction="/deleteUser/${user.id}" formmethod="post">Usuń</button></td>
+        </form>
     </tr>
     </tbody>
     </tbody>
