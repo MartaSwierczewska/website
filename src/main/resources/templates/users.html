@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <link href="../static/css/users.css" th:href="@{/css/users.css}" rel="stylesheet" >
+    <link href="../static/css/users.css" th:href="@{/css/users.css}" rel="stylesheet">
     <title>Użytkownicy</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <th> Id</th>
         <th> Name</th>
         <th> Surname</th>
-        <th> Age </th>
+        <th> Age</th>
         <th></th>
     </tr>
     </thead>
@@ -23,7 +23,10 @@
         <td><span th:text="${user.surname}"> Surname </span></td>
         <td><span th:text="${user.age}"> Age </span></td>
         <form>
-            <td><button th:formaction="${'/deleteUser/' + user.id}" formmethod="post">Usuń</button></td>
+            <td>
+                <button th:formaction="${'/deleteUser/' + user.id}" formmethod="post">Usuń</button>
+                <button th:formaction="${'/editUser/'+user.id}" formmethod="get">Edytuj</button>
+            </td>
         </form>
     </tr>
     </tbody>
@@ -31,8 +34,7 @@
 </table>
 <form>
     <br>
-    <button formaction="/createUser" formmethod="post">Dodaj</button>
-    <button>Edytuj</button>
+    <button formaction="/createUser" formmethod="get">Dodaj</button>
     <br><br>
     <button formaction="/" formmethod="get">Powrót</button>
 </form>

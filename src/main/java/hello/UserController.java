@@ -21,14 +21,30 @@ public class UserController {
     }
 
     @PostMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable("id") Long id,  Model model) {
+    public String deleteUser(@PathVariable("id") Long id, Model model) {
         userService.deleteUser(id);
         model.addAttribute("users", userService.getUsers());
         return "users";
     }
 
+    @GetMapping("/editUser/{id}")
+    public String editUser(@PathVariable("id") Long id, Model model){
+        User user=userService.getUserByID(id);
+        model.addAttribute("user", user);
+        return "editUser";
+    }
+
+    @PostMapping("/editUser")
+    public String editUser(Model model, User user) {
+        userService.editUser(user);
+        model.addAttribute("users", userService.getUsers());
+        return "users";
+    }
+
     @GetMapping("/createUser")
-    public String createUser(Model model) { return "createUser"; }
+    public String createUser(Model model) {
+        return "createUser";
+    }
 
     @PostMapping("/createUser")
     public void addUser(User user) {
