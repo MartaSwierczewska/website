@@ -6,37 +6,45 @@
     <title>Użytkownicy</title>
 </head>
 <body>
-<table>
-    <thead>
-    <tr>
-        <th> Id</th>
-        <th> Name</th>
-        <th> Surname</th>
-        <th> Age</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${users}">
-        <td><span th:text="${user.id}">Id</span></td>
-        <td><span th:text="${user.name}"> Name </span></td>
-        <td><span th:text="${user.surname}"> Surname </span></td>
-        <td><span th:text="${user.age}"> Age </span></td>
-        <form>
-            <td>
-                <button th:formaction="${'/deleteUser/' + user.id}" formmethod="post">Usuń</button>
-                <button th:formaction="${'/editUser/'+user.id}" formmethod="get">Edytuj</button>
-            </td>
-        </form>
-    </tr>
-    </tbody>
-    </tbody>
-</table>
-<form>
-    <br>
-    <button formaction="/createUser" formmethod="get">Dodaj</button>
-    <br><br>
-    <button formaction="/" formmethod="get">Powrót</button>
-</form>
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                    <tr class="table100-head">
+                        <th class="column1">ID</th>
+                        <th class="column2">Imię</th>
+                        <th class="column3">Nazwisko</th>
+                        <th class="column4">Wiek</th>
+                        <th class="column5">Edytuj / Usuń</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user : ${users}">
+                        <td><span th:text="${user.id}">Id</span></td>
+                        <td><span th:text="${user.name}"> Name </span></td>
+                        <td><span th:text="${user.surname}"> Surname </span></td>
+                        <td><span th:text="${user.age}"> Age </span></td>
+                        <form>
+                            <td>
+                                <a th:formaction="${'/editUser/'+user.id}" formmethod="get"><img src='../static/css/edit.png' alt="edit"/></a>
+                                <a th:formaction="${'/deleteUser/' + user.id}" formmethod="post"><img src='../static/css/bin.png' alt="delete"/></a>
+                            </td>
+                        </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <form action="/users" method="post">
+        <div class="container-login100-form-btn">
+            <button class="login100-form-btn" formaction="/createUser" formmethod="get">Dodaj użytkownika</button>
+            <button class="login100-form-btn" formaction="/" formmethod="get">Powrót</button>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>

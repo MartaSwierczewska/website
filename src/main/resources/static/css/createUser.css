@@ -1,3 +1,10 @@
+.bgimg {
+    background-image: url('bgUser.jpg');
+    background-size: cover, 80%;
+    min-height: 100%;
+    background-position: center;
+}
+
 input {
     outline: none;
     border: none;
@@ -16,7 +23,6 @@ button {
 }
 
 .container-login100 {
-    background-color: #4CAF50;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -37,7 +43,7 @@ button {
 }
 
 .wrap-login100 {
-    width: 370px;
+    width: 400px;
 }
 
 .login100-form {
@@ -52,6 +58,7 @@ button {
     text-align: center;
     text-transform: uppercase;
     display: block;
+    margin-bottom: 20px;
 }
 
 .wrap-input100 {
@@ -73,6 +80,7 @@ button {
 }
 
 .container-login100-form-btn {
+    padding: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -91,6 +99,7 @@ button {
     background: -webkit-linear-gradient(left, #a445b2, #d41872, #fa4299);
     position: relative;
     z-index: 1;
+    margin: 0 10px 10px;
 }
 
 .login100-form-btn::before {
@@ -101,12 +110,11 @@ button {
     width: 100%;
     height: 100%;
     border-radius: 21px;
-    background-color: #555555;
+    background-image: url('bgUser.jpg');
     top: 0;
     left: 0;
     opacity: 0;
 }
-
 
 .login100-form-btn:hover:before {
     opacity: 1;

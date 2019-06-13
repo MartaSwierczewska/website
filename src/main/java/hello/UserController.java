@@ -46,7 +46,10 @@ public class UserController {
     }
 
     @PostMapping("/createUser")
-    public void addUser(User user) {
+    public String addUser(Model model, User user) {
         userService.addUser(user);
+        model.addAttribute("users", userService.getUsers());
+        return "users";
     }
+
 }

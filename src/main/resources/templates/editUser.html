@@ -2,22 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; UTF-8">
-    <link href="../static/css/createUser.css" th:href="@{/css/createUser.css}" rel="stylesheet" >
-    <title>Edytowanie</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../static/css/createUser.css" type='text/css' th:href="@{/css/createUser.css}" rel="stylesheet">
+    <title>Dodawanie</title>
 </head>
-<body>
-<form action="/editUser" method="post">
-    <p>ID:</p>
-    <input type="text" name="id" th:value="${user.id}"><br>
-    <p>First name:</p>
-    <input type="text" name="name" th:value="${user.name}"><br>
-    <p>Last name:</p>
-    <input type="text" name="surname" th:value="${user.surname}"><br>
-    <p>Age:</p>
-    <input type="text" name="age" th:value="${user.age}"><br>
-    <br>
-    <button formmethod="post">Zapisz</button>
-    <button formaction="/users" formmethod="get">Powrót</button>
-</form>
+<body class="bgimg">
+<div class="container-login100">
+    <div class="wrap-login100">
+        <span class="login100-form-title">Edytuj użytkownika</span>
+        <form class="login100-form" action="/editUser" method="post">
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="name" th:value="${user.name}"/>
+            </div>
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="surname" th:value="${user.surname}"/>
+            </div>
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="age" th:value="${user.age}"/>
+            </div>
+            <br>
+            <div class="container-login100-form-btn">
+                <button class="login100-form-btn" formmethod="post">Zapisz</button>
+                <button class="login100-form-btn" formaction="/users" formmethod="get">Powrót</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="../static/css/createUser.css" type='text/css' rel="stylesheet">
+    <link href="../static/css/createUser.css" type='text/css' th:href="@{/css/createUser.css}" rel="stylesheet">
     <title>Dodawanie</title>
 </head>
-<body>
+<body class="bgimg">
 <div class="container-login100">
-    <p>Dodaj użytkownika:</p>
-    <form class="login100-form" action="/createUser" method="post">
-        <div class="wrap-input100">
-            <input class="input100" type="text" name="name" placeholder="User name"/>
-        </div>
-        <div class="wrap-input100">
-            <input class="input100" type="text" name="surname" placeholder="Surname"/>
-        </div>
-        <div class="wrap-input100">
-            <input class="input100" type="text" name="age" placeholder="Age"/>
-        </div>
-        <br>
-        <div class="container-login100-form-btn py-2">
-            <button class="login100-form-btn" formmethod="post">Zapisz</button>
-            <button class="login100-form-btn" formaction="/users" formmethod="get">Powrót</button>
-        </div>
-    </form>
+    <div class="wrap-login100">
+        <span class="login100-form-title">Dodaj użytkownika</span>
+        <form class="login100-form" action="/createUser" method="post">
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="name" placeholder="Imię"/>
+            </div>
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="surname" placeholder="Nazwisko"/>
+            </div>
+            <div class="wrap-input100">
+                <input class="input100" type="text" name="age" placeholder="Wiek"/>
+            </div>
+            <br>
+            <div class="container-login100-form-btn">
+                <button class="login100-form-btn" formmethod="post">Zapisz</button>
+                <button class="login100-form-btn" formaction="/users" formmethod="get">Powrót</button>
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>
