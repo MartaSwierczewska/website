@@ -24,6 +24,7 @@ public class UserService  {
     }
 
     public void editUser(User user){
+        System.out.println(user);
         userRepository.save(user);
     }
 

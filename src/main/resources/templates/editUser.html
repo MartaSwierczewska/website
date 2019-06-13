@@ -13,6 +13,9 @@
         <span class="login100-form-title">Edytuj użytkownika</span>
         <form class="login100-form" action="/editUser" method="post">
             <div class="wrap-input100">
+                <input class="input100" type="text" name="id" th:value="${user.id}" readonly/>
+            </div>
+            <div class="wrap-input100">
                 <input class="input100" type="text" name="name" th:value="${user.name}"/>
             </div>
             <div class="wrap-input100">
