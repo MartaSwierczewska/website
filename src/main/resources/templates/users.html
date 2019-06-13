@@ -28,8 +28,10 @@
                         <td><span th:text="${user.age}"> Age </span></td>
                         <form>
                             <td>
-                                <a th:formaction="${'/editUser/'+user.id}" formmethod="get"><img src='../static/css/edit.png' alt="edit"/></a>
-                                <a th:formaction="${'/deleteUser/' + user.id}" formmethod="post"><img src='../static/css/bin.png' alt="delete"/></a>
+                                <button th:formaction="${'/editUser/'+user.id}" formmethod="get"><img
+                                        src='../static/css/bgUser.jpg' alt="edit"/></button>
+                                <button th:formaction="${'/deleteUser/' + user.id}" formmethod="post"><img
+                                        src='../static/css/bin.png' alt="delete"/></button>
                             </td>
                         </form>
                     </tr>
